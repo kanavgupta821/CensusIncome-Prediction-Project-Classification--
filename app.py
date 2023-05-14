@@ -25,7 +25,6 @@ def predict_datapoint():
             workclass=request.form.get('workclass'),
             fnlwgt=float(request.form.get('fnlwgt')),
             education=request.form.get('education'),
-            education_num=int(request.form.get('education_num')),
             marital_status=request.form.get('marital_status'),
             occupation=request.form.get('occupation'),
             relationship=request.form.get('relationship'),

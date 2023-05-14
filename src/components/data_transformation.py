@@ -29,7 +29,7 @@ class DataTransformation:
             logging.info("Data Transformation initiated")
             # Define which columns should be ordinal-encoded and which should be scaled
             categorical_cols = ['workclass', 'education', 'marital_status', 'occupation', 'relationship', 'race', 'sex', 'native_country']
-            numerical_cols = ['age', 'fnlwgt', 'education_num', 'capital_gain', 'capital_loss', 'hours_per_week']
+            numerical_cols = ['age', 'fnlwgt', 'capital_gain', 'capital_loss', 'hours_per_week']
 
             logging.info('Pipeline Initiated')
 
@@ -76,7 +76,7 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformation_object()
 
             target_column_name = 'Target'
-            drop_columns = [target_column_name]
+            drop_columns = [target_column_name,'education_num']
 
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
             target_feature_train_df = train_df[target_column_name]

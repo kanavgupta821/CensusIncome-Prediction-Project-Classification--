@@ -40,7 +40,6 @@ class CustomData:
                  workclass:str,
                  fnlwgt:float,
                  education:str,
-                 education_num:int,
                  marital_status:str,
                  occupation:str,
                  relationship:str,
@@ -56,7 +55,6 @@ class CustomData:
         self.workclass = workclass
         self.fnlwgt = fnlwgt
         self.education = education
-        self.education_num = education_num
         self.marital_status = marital_status
         self.occupation = occupation
         self.relationship = relationship
@@ -74,8 +72,7 @@ class CustomData:
                 'age':[self.age],
                 'workclass':[self.workclass], 
                 'fnlwgt':[self.fnlwgt], 
-                'education':[self.education], 
-                'education_num':[self.education_num],
+                'education':[self.education],
                 'marital_status':[self.marital_status], 
                 'occupation':[self.occupation], 
                 'relationship':[self.relationship], 
