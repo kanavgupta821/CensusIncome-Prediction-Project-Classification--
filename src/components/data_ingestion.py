@@ -12,6 +12,9 @@ from dataclasses import dataclass
 
 from components.data_transformation import DataTransformation
 from components.data_transformation import DataTransformationConfig
+
+from components.model_trainer import ModelTrainer
+from components.model_trainer import ModelTrainerConfig
 ## Initialize the data ingestion configuration
 
 @dataclass
@@ -29,7 +32,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info('data ingestion methods starts')
         try:
-            df=pd.read_csv(os.path.join('notebooks/censusdata','adult.csv'),names=['age','workclass','fnlwgt','education','education_num','marital-status','occupation','relationship','race','sex','capital_gain','capital_loss','hours-per-week','native-country','Target'])
+            df=pd.read_csv(os.path.join('notebooks/censusdata','adult.csv'),names=['age','workclass','fnlwgt','education','education_num','marital_status','occupation','relationship','race','sex','capital_gain','capital_loss','hours_per_week','native_country','Target'])
             logging.info('Dataset read as pandas Dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
@@ -51,10 +54,15 @@ class DataIngestion:
         except Exception as e:
             logging.info("Exception occured at Data Ingestion stage")
             raise CustomException(e,sys)
-        
+
+'''     
 if __name__ == '__main__':
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_training(train_arr,test_arr))
+'''

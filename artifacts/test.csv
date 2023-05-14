@@ -1,4 +1,4 @@
-age,workclass,fnlwgt,education,education_num,marital-status,occupation,relationship,race,sex,capital_gain,capital_loss,hours-per-week,native-country,Target
+age,workclass,fnlwgt,education,education_num,marital_status,occupation,relationship,race,sex,capital_gain,capital_loss,hours_per_week,native_country,Target
 27, Private,160178, Some-college,10, Divorced, Adm-clerical, Not-in-family, White, Female,0,0,38, United-States, <=50K
 45, State-gov,50567, HS-grad,9, Married-civ-spouse, Exec-managerial, Wife, White, Female,0,0,40, United-States, <=50K
 29, Private,185908, Bachelors,13, Married-civ-spouse, Exec-managerial, Husband, Black, Male,0,0,55, United-States, >50K
